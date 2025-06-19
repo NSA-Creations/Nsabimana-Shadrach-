@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -839,236 +840,22 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section class="contact" id="contact" aria-label="Contact Form">
-    <h2>Get In Touch</h2>
-    <form class="contact-form" id="contact-form" novalidate>
-      <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true" aria-describedby="name-error" />
-      <span id="name-error" style="color:#ffccbc; font-size:0.9rem; display:none;">Please enter your name</span>
+  <h2>Get In Touch</h2>
+  <form class="contact-form" id="contact-form"
+        action="https://formsubmit.co/nsabitx3@gmail.com"
+        method="POST">
+    <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true" aria-describedby="name-error" />
+    <span id="name-error" style="color:#ffccbc; font-size:0.9rem; display:none;">Please enter your name</span>
 
-      <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true" aria-describedby="email-error" />
-      <span id="email-error" style="color:#ffccbc; font-size:0.9rem; display:none;">Please enter a valid email</span>
+    <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true" aria-describedby="email-error" />
+    <span id="email-error" style="color:#ffccbc; font-size:0.9rem; display:none;">Please enter a valid email</span>
 
-      <textarea id="message" name="message" placeholder="Your Message" required aria-required="true" aria-describedby="message-error"></textarea>
-      <span id="message-error" style="color:#ffccbc; font-size:0.9rem; display:none;">Please enter your message</span>
+    <textarea id="message" name="message" placeholder="Your Message" required aria-required="true" aria-describedby="message-error"></textarea>
+    <span id="message-error" style="color:#ffccbc; font-size:0.9rem; display:none;">Please enter your message</span>
 
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Nsabimana Shadrach. All rights reserved.
-  </footer>
-
-  <!-- JavaScript -->
-  <script>
-    // Hamburger Menu Toggle
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navLinks.classList.toggle('open');
-    });
-
-    // Close menu on link click (mobile)
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (navLinks.classList.contains('open')) {
-          hamburger.classList.remove('active');
-          navLinks.classList.remove('open');
-        }
-      });
-    });
-
-    // Dark Mode Toggle
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    darkModeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      if(document.body.classList.contains('dark')) {
-        darkModeToggle.textContent = '☀️';
-      } else {
-        darkModeToggle.textContent = '🌙';
-      }
-    });
-
-    // Portfolio Filtering
-    const filterButtons = document.querySelectorAll('.portfolio-filters button');
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // Update active button
-        filterButtons.forEach(b => {
-          b.classList.remove('active');
-          b.setAttribute('aria-selected', 'false');
-          b.tabIndex = -1;
-        });
-        btn.classList.add('active');
-        btn.setAttribute('aria-selected', 'true');
-        btn.tabIndex = 0;
-
-        const filter = btn.dataset.filter;
-        portfolioItems.forEach(item => {
-          if(filter === 'all' || item.dataset.category === filter) {
-            item.style.display = 'block';
-            setTimeout(() => {
-              item.style.opacity = 1;
-              item.style.transform = 'scale(1)';
-            }, 10);
-          } else {
-            item.style.opacity = 0;
-            item.style.transform = 'scale(0.8)';
-            setTimeout(() => {
-              item.style.display = 'none';
-            }, 300);
-          }
-        });
-      });
-    });
-
-    // Portfolio Modal
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modal-img');
-    const modalTitle = document.getElementById('modal-title');
-    const modalDesc = document.getElementById('modal-desc');
-    const modalClose = document.getElementById('modal-close');
-
-    portfolioItems.forEach(item => {
-      item.addEventListener('click', () => {
-        const imgSrc = item.querySelector('img').src;
-        const title = item.querySelector('h3').textContent;
-        const desc = item.querySelector('p').textContent;
-
-        modalImg.src = imgSrc;
-        modalImg.alt = title + ' Screenshot';
-        modalTitle.textContent = title;
-        modalDesc.textContent = desc;
-
-        modal.classList.add('active');
-        modal.setAttribute('aria-hidden', 'false');
-        modalClose.focus();
-      });
-    });
-
-    modalClose.addEventListener('click', () => {
-      modal.classList.remove('active');
-      modal.setAttribute('aria-hidden', 'true');
-    });
-
-    // Close modal on outside click
-    modal.addEventListener('click', e => {
-      if(e.target === modal) {
-        modal.classList.remove('active');
-        modal.setAttribute('aria-hidden', 'true');
-      }
-    });
-
-    // Close modal on ESC key
-    document.addEventListener('keydown', e => {
-      if(e.key === 'Escape' && modal.classList.contains('active')) {
-        modal.classList.remove('active');
-        modal.setAttribute('aria-hidden', 'true');
-      }
-    });
-
-    // Testimonials Slider
-    const slides = document.querySelectorAll('.testimonial-slide');
-    const prevBtn = document.getElementById('prevTestimonial');
-    const nextBtn = document.getElementById('nextTestimonial');
-    let currentSlide = 0;
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-        slide.tabIndex = i === index ? 0 : -1;
-      });
-    }
-
-    prevBtn.addEventListener('click', () => {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    });
-
-    nextBtn.addEventListener('click', () => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    });
-
-    // Auto slide every 8 seconds
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }, 8000);
-
-    // Custom Cursor
-    const cursor = document.getElementById('cursor');
-
-    document.addEventListener('mousemove', e => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-    });
-
-    // Cursor hover effects on clickable elements
-    const hoverElements = 'a, button, .service-card, .portfolio-item, .hamburger';
-
-    document.querySelectorAll(hoverElements).forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        cursor.classList.add('hover');
-      });
-      el.addEventListener('mouseleave', () => {
-        cursor.classList.remove('hover');
-      });
-    });
-
-    // Form Validation
-    const form = document.getElementById('contact-form');
-    const nameInput = form.name;
-    const emailInput = form.email;
-    const messageInput = form.message;
-
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      let valid = true;
-
-      // Name validation
-      if(!nameInput.value.trim()) {
-        showError('name-error');
-        valid = false;
-      } else {
-        hideError('name-error');
-      }
-
-      // Email validation (simple regex)
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if(!emailRegex.test(emailInput.value.trim())) {
-        showError('email-error');
-        valid = false;
-      } else {
-        hideError('email-error');
-      }
-
-      // Message validation
-      if(!messageInput.value.trim()) {
-        showError('message-error');
-        valid = false;
-      } else {
-        hideError('message-error');
-      }
-
-      if(valid) {
-        alert('Thank you for your message! I will get back to you soon.');
-        form.reset();
-      }
-    });
-
-    function showError(id) {
-      document.getElementById(id).style.display = 'block';
-    }
-    function hideError(id) {
-      document.getElementById(id).style.display = 'none';
-    }
-  </script>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
 </body>
 </html>
