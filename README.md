@@ -842,9 +842,7 @@
 
   <section class="contact" id="contact" aria-label="Contact Form">
   <h2>Get In Touch</h2>
-  <form class="contact-form" id="contact-form"
-        action="https://formsubmit.co/nsabitx3@gmail.com"
-        method="POST">
+  <form action="https://formsubmit.co/nsabitx3@gmail.com" method="POST">
     <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true" aria-describedby="name-error" />
     <span id="name-error" style="color:#ffccbc; font-size:0.9rem; display:none;">Please enter your name</span>
 
