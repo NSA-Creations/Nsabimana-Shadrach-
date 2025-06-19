@@ -910,14 +910,149 @@
 <body>
   <div class="form-container">
     <h2>Contact Us</h2>
-    <form action="https://formsubmit.co/nsabitx3@gmail.com" method="POST">
+     <title>We will reply asasp</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 2.5rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 420px;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.8rem;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 1.3rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #555;
+      font-weight: 500;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border-radius: 8px;
+      border: 1.8px solid #ddd;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #764ba2;
+      outline: none;
+      box-shadow: 0 0 8px rgba(118, 75, 162, 0.4);
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 1rem;
+      background: #764ba2;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1.15rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    button[type="submit"]:hover {
+      background: #5a357a;
+    }
+
+    /* Success message */
+    .success-message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #4caf50;
+      color: white;
+      padding: 1.2rem 2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      opacity: 0;
+      pointer-events: none;
+      animation-fill-mode: forwards;
+    }
+
+    .success-message.show {
+      animation: fadeInScale 0.5s forwards;
+      pointer-events: auto;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInScale {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="user_name" required />
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="user_email" required />
       </div>
       <div class="form-group">
         <label for="message">Message</label>
@@ -925,17 +1060,48 @@
       </div>
       <button type="submit">Send Message</button>
     </form>
-    <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true" aria-describedby="name-error" />
-    <span id="name-error" style="color:#ffccbc; font-size:0.9rem; display:none;">Please enter your name</span>
+    <div class="success-message" id="success-message">Message sent successfully! 🎉</div>
+  </div>
 
-    <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true" aria-describedby="email-error" />
-    <span id="email-error" style="color:#ffccbc; font-size:0.9rem; display:none;">Please enter a valid email</span>
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+    })();
 
-    <textarea id="message" name="message" placeholder="Your Message" required aria-required="true" aria-describedby="message-error"></textarea>
-    <span id="message-error" style="color:#ffccbc; font-size:0.9rem; display:none;">Please enter your message</span>
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
 
-    <button type="submit">Send Message</button>
-  </form>
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Disable submit button to prevent multiple submits
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+        .then(() => {
+          // Show success message
+          successMessage.classList.add('show');
+          // Reset form
+          form.reset();
+          submitBtn.textContent = 'Send Message';
+          submitBtn.disabled = false;
+
+          // Hide success message after 3 seconds
+          setTimeout(() => {
+            successMessage.classList.remove('show');
+          }, 3000);
+        }, (error) => {
+          alert('Oops! Something went wrong. Please try again later.');
+          console.error('EmailJS error:', error);
+          submitBtn.textContent = 'Send Message';
+          submitBtn.disabled = false;
+        });
+    });
+  </script>
 </section>
 </body>
 </html>
