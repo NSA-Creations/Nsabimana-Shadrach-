@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -840,268 +839,236 @@
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section class="contact" id="contact" aria-label="Contact Form">
-  <h2>Get In Touch</h2>
-   <title>Contact Form</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f6f8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .form-container {
-      background: #fff;
-      padding: 2rem 2.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-      max-width: 400px;
-      width: 100%;
-    }
-    .form-container h2 {
-      margin-bottom: 1.5rem;
-      color: #333;
-      text-align: center;
-    }
-    .form-group {
-      margin-bottom: 1rem;
-    }
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      color: #555;
-    }
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 0.7rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-      transition: border-color 0.2s;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: #007bff;
-      outline: none;
-    }
-    .form-group textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-    button[type="submit"] {
-      width: 100%;
-      padding: 0.8rem;
-      background: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    button[type="submit"]:hover {
-      background: #0056b3;
-    }
-  </style>
-</head>
-<body>
-  <div class="form-container">
-    <h2>Contact Us</h2>
-     <title>We will reply asasp</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    <h2>Get In Touch</h2>
+    <form class="contact-form" id="contact-form" novalidate>
+      <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true" aria-describedby="name-error" />
+      <span id="name-error" style="color:#ffccbc; font-size:0.9rem; display:none;">Please enter your name</span>
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      overflow: hidden;
-    }
+      <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true" aria-describedby="email-error" />
+      <span id="email-error" style="color:#ffccbc; font-size:0.9rem; display:none;">Please enter a valid email</span>
 
-    .form-container {
-      background: #fff;
-      padding: 2.5rem 3rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 420px;
-      position: relative;
-      overflow: hidden;
-      animation: fadeInUp 0.8s ease forwards;
-    }
+      <textarea id="message" name="message" placeholder="Your Message" required aria-required="true" aria-describedby="message-error"></textarea>
+      <span id="message-error" style="color:#ffccbc; font-size:0.9rem; display:none;">Please enter your message</span>
 
-    h2 {
-      text-align: center;
-      margin-bottom: 1.8rem;
-      color: #333;
-      font-weight: 600;
-    }
-
-    .form-group {
-      margin-bottom: 1.3rem;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 0.5rem;
-      color: #555;
-      font-weight: 500;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 0.9rem 1rem;
-      border-radius: 8px;
-      border: 1.8px solid #ddd;
-      font-size: 1rem;
-      transition: border-color 0.3s ease;
-      resize: vertical;
-    }
-
-    input:focus,
-    textarea:focus {
-      border-color: #764ba2;
-      outline: none;
-      box-shadow: 0 0 8px rgba(118, 75, 162, 0.4);
-    }
-
-    textarea {
-      min-height: 120px;
-    }
-
-    button[type="submit"] {
-      width: 100%;
-      padding: 1rem;
-      background: #764ba2;
-      border: none;
-      border-radius: 8px;
-      color: #fff;
-      font-size: 1.15rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    button[type="submit"]:hover {
-      background: #5a357a;
-    }
-
-    /* Success message */
-    .success-message {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: #4caf50;
-      color: white;
-      padding: 1.2rem 2rem;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 1.2rem;
-      opacity: 0;
-      pointer-events: none;
-      animation-fill-mode: forwards;
-    }
-
-    .success-message.show {
-      animation: fadeInScale 0.5s forwards;
-      pointer-events: auto;
-    }
-
-    /* Animations */
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInScale {
-      0% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.8);
-      }
-      100% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="form-container">
-    <h2>Contact Us</h2>
-    <form id="contact-form">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="user_name" required />
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="user_email" required />
-      </div>
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" required></textarea>
-      </div>
       <button type="submit">Send Message</button>
     </form>
-    <div class="success-message" id="success-message">Message sent successfully! 🎉</div>
-  </div>
+  </section>
 
-  <!-- EmailJS SDK -->
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Nsabimana Shadrach. All rights reserved.
+  </footer>
+
+  <!-- JavaScript -->
   <script>
-    (function(){
-      emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
-    })();
+    // Hamburger Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
 
-    const form = document.getElementById('contact-form');
-    const successMessage = document.getElementById('success-message');
-
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      // Disable submit button to prevent multiple submits
-      const submitBtn = form.querySelector('button[type="submit"]');
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-
-      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-        .then(() => {
-          // Show success message
-          successMessage.classList.add('show');
-          // Reset form
-          form.reset();
-          submitBtn.textContent = 'Send Message';
-          submitBtn.disabled = false;
-
-          // Hide success message after 3 seconds
-          setTimeout(() => {
-            successMessage.classList.remove('show');
-          }, 3000);
-        }, (error) => {
-          alert('Oops! Something went wrong. Please try again later.');
-          console.error('EmailJS error:', error);
-          submitBtn.textContent = 'Send Message';
-          submitBtn.disabled = false;
-        });
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('open');
     });
+
+    // Close menu on link click (mobile)
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navLinks.classList.contains('open')) {
+          hamburger.classList.remove('active');
+          navLinks.classList.remove('open');
+        }
+      });
+    });
+
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      if(document.body.classList.contains('dark')) {
+        darkModeToggle.textContent = '☀️';
+      } else {
+        darkModeToggle.textContent = '🌙';
+      }
+    });
+
+    // Portfolio Filtering
+    const filterButtons = document.querySelectorAll('.portfolio-filters button');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active button
+        filterButtons.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+          b.tabIndex = -1;
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        btn.tabIndex = 0;
+
+        const filter = btn.dataset.filter;
+        portfolioItems.forEach(item => {
+          if(filter === 'all' || item.dataset.category === filter) {
+            item.style.display = 'block';
+            setTimeout(() => {
+              item.style.opacity = 1;
+              item.style.transform = 'scale(1)';
+            }, 10);
+          } else {
+            item.style.opacity = 0;
+            item.style.transform = 'scale(0.8)';
+            setTimeout(() => {
+              item.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+
+    // Portfolio Modal
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc = document.getElementById('modal-desc');
+    const modalClose = document.getElementById('modal-close');
+
+    portfolioItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const imgSrc = item.querySelector('img').src;
+        const title = item.querySelector('h3').textContent;
+        const desc = item.querySelector('p').textContent;
+
+        modalImg.src = imgSrc;
+        modalImg.alt = title + ' Screenshot';
+        modalTitle.textContent = title;
+        modalDesc.textContent = desc;
+
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        modalClose.focus();
+      });
+    });
+
+    modalClose.addEventListener('click', () => {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+    });
+
+    // Close modal on outside click
+    modal.addEventListener('click', e => {
+      if(e.target === modal) {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    // Close modal on ESC key
+    document.addEventListener('keydown', e => {
+      if(e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    // Testimonials Slider
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const prevBtn = document.getElementById('prevTestimonial');
+    const nextBtn = document.getElementById('nextTestimonial');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+        slide.tabIndex = i === index ? 0 : -1;
+      });
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    // Auto slide every 8 seconds
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 8000);
+
+    // Custom Cursor
+    const cursor = document.getElementById('cursor');
+
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    // Cursor hover effects on clickable elements
+    const hoverElements = 'a, button, .service-card, .portfolio-item, .hamburger';
+
+    document.querySelectorAll(hoverElements).forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.classList.add('hover');
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('hover');
+      });
+    });
+
+    // Form Validation
+    const form = document.getElementById('contact-form');
+    const nameInput = form.name;
+    const emailInput = form.email;
+    const messageInput = form.message;
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      let valid = true;
+
+      // Name validation
+      if(!nameInput.value.trim()) {
+        showError('name-error');
+        valid = false;
+      } else {
+        hideError('name-error');
+      }
+
+      // Email validation (simple regex)
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if(!emailRegex.test(emailInput.value.trim())) {
+        showError('email-error');
+        valid = false;
+      } else {
+        hideError('email-error');
+      }
+
+      // Message validation
+      if(!messageInput.value.trim()) {
+        showError('message-error');
+        valid = false;
+      } else {
+        hideError('message-error');
+      }
+
+      if(valid) {
+        alert('Thank you for your message! I will get back to you soon.');
+        form.reset();
+      }
+    });
+
+    function showError(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+    function hideError(id) {
+      document.getElementById(id).style.display = 'none';
+    }
   </script>
-</section>
 </body>
 </html>
