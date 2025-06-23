@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nsabimana Shadrach | Web Designer & Developer</title>
     <!-- Favicon -->
-  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="icon" type="logo.png" href="logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <style>
     /* Reset and base */
@@ -689,7 +689,7 @@
   <!-- Header -->
   <header>
     <nav class="container">
-      <div class="logo" tabindex="0">Nsabimana Shadrach</div>
+      <div class="logo" tabindex="0" style="left: 0px; top: 0px; width: 953px">Nsabimana Shadrach</div>
       <ul class="nav-links" id="nav-links">
         <li><a href="#hero">Home</a></li>
         <li><a href="#services">Services</a></li>
