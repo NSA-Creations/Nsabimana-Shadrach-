@@ -1,5 +1,6 @@
 <html lang="en">
-<head>
+<img src="/path/to/logo.png" alt="Your Logo">
+ <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nsabimana Shadrach | Web Designer & Developer</title>
