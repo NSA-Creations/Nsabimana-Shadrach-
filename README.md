@@ -840,22 +840,40 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section class="contact" id="contact" aria-label="Contact Form">
-    <h2>Get In Touch</h2>
-    <form class="contact-form" id="contact-form" novalidate>
-      <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true" aria-describedby="name-error" />
-      <span id="name-error" style="color:#ffccbc; font-size:0.9rem; display:none;">Please enter your name</span>
+<!-- Contact Section -->
+<section class="contact" id="contact" aria-label="Contact Information" style="padding: 2rem; max-width: 400px; margin: auto; font-family: Arial, sans-serif;">
+  <h2 style="text-align: center; margin-bottom: 1.5rem;">Get In Touch</h2>
+  <div class="contact-info" style="display: flex; flex-direction: column; gap: 1.2rem;">
 
-      <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true" aria-describedby="email-error" />
-      <span id="email-error" style="color:#ffccbc; font-size:0.9rem; display:none;">Please enter a valid email</span>
+    <a href="mailto:nsabitx3@gmail.com" class="contact-item" style="display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: #333; font-size: 1.1rem; border: 2px solid #ffccbc; border-radius: 8px; padding: 0.8rem 1rem; transition: background-color 0.3s ease, transform 0.3s ease;">
+      <span class="icon" aria-hidden="true" style="font-size: 1.5rem; transition: transform 0.3s ease;">📧</span>
+      <span>nsabitx3@gmail.com</span>
+    </a>
 
-      <textarea id="message" name="message" placeholder="Your Message" required aria-required="true" aria-describedby="message-error"></textarea>
-      <span id="message-error" style="color:#ffccbc; font-size:0.9rem; display:none;">Please enter your message</span>
+    <a href="mailto:stuffsamuel@gmail.com" class="contact-item" style="display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: #333; font-size: 1.1rem; border: 2px solid #ffccbc; border-radius: 8px; padding: 0.8rem 1rem; transition: background-color 0.3s ease, transform 0.3s ease;">
+      <span class="icon" aria-hidden="true" style="font-size: 1.5rem; transition: transform 0.3s ease;">📧</span>
+      <span>stuffsamuel@gmail.com</span>
+    </a>
 
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+    <a href="https://instagram.com/nsabitx3" target="_blank" rel="noopener" class="contact-item" style="display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: #333; font-size: 1.1rem; border: 2px solid #ffccbc; border-radius: 8px; padding: 0.8rem 1rem; transition: background-color 0.3s ease, transform 0.3s ease;">
+      <span class="icon" aria-hidden="true" style="font-size: 1.5rem; transition: transform 0.3s ease;">📸</span>
+      <span>@nsabitx3 on Instagram</span>
+    </a>
+
+  </div>
+</section>
+
+<style>
+  .contact-item:hover {
+    background-color: #ffccbc;
+    color: #5d4037;
+    transform: scale(1.05);
+  }
+  .contact-item:hover .icon {
+    transform: rotate(15deg) scale(1.2);
+  }
+</style>
+
 
   <!-- Footer -->
   <footer>
