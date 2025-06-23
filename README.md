@@ -1,5 +1,5 @@
 <html lang="en">
-<img src="/path/to/Your logo.png" alt="Your Logo">
+<img src="/path/to/Logo.png" alt="Logo">
  <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
