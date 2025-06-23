@@ -2,10 +2,14 @@
  <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <header style="display: flex; align-items: center; padding: 10px; background-color: #f1f1f1;">
+    <img src="path/to/your-logo.png" alt="Nsabimana Shadrach Logo" style="height: 50px; margin-right: 15px;" />
+    <h1>Nsabimana Shadrach | Web Designer & Developer</h1>
+  </header>
   <title>Nsabimana Shadrach | Web Designer & Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <style>
-    /* Reset and base */
+ /* Reset and base */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
       scroll-behavior: smooth;
