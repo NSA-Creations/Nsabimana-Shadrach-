@@ -1,4 +1,4 @@
-<html>
+<! DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -840,93 +840,23 @@
     </div>
   </section>
 
- <!-- Contact Section -->
-<section class="contact" id="contact" aria-label="Contact Form" style="background:#f9f9f9; padding:3rem 1rem; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-  <h2 style="text-align:center; color:#333; font-size:2.5rem; margin-bottom:1.5rem;">Get In Touch</h2>
+  <!-- Contact Section -->
+  <section class="contact" id="contact" aria-label="Contact Form">
+    <h2>Get In Touch</h2>
+    <form class="contact-form" id="contact-form" novalidate>
+      <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true" aria-describedby="name-error" />
+      <span id="name-error" style="color:#ffccbc; font-size:0.9rem; display:none;">Please enter your name</span>
 
-  <form class="contact-form" id="contact-form" novalidate style="max-width:480px; margin:0 auto; background:#fff; padding:2rem; border-radius:8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-    
-    <label for="name" style="display:block; margin-bottom:0.5rem; font-weight:600; color:#555;">Your Name</label>
-    <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true" aria-describedby="name-error" 
-      style="width:100%; padding:0.75rem 1rem; border:1px solid #ccc; border-radius:4px; font-size:1rem; margin-bottom:0.3rem; transition: border-color 0.3s;" />
-    <span id="name-error" style="color:#e74c3c; font-size:0.85rem; display:none;">Please enter your name</span>
+      <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true" aria-describedby="email-error" />
+      <span id="email-error" style="color:#ffccbc; font-size:0.9rem; display:none;">Please enter a valid email</span>
 
-    <label for="email" style="display:block; margin-top:1rem; margin-bottom:0.5rem; font-weight:600; color:#555;">Your Email</label>
-    <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true" aria-describedby="email-error"
-      style="width:100%; padding:0.75rem 1rem; border:1px solid #ccc; border-radius:4px; font-size:1rem; margin-bottom:0.3rem; transition: border-color 0.3s;" />
-    <span id="email-error" style="color:#e74c3c; font-size:0.85rem; display:none;">Please enter a valid email</span>
+      <textarea id="message" name="message" placeholder="Your Message" required aria-required="true" aria-describedby="message-error"></textarea>
+      <span id="message-error" style="color:#ffccbc; font-size:0.9rem; display:none;">Please enter your message</span>
 
-    <label for="message" style="display:block; margin-top:1rem; margin-bottom:0.5rem; font-weight:600; color:#555;">Your Message</label>
-    <textarea id="message" name="message" placeholder="Your Message" required aria-required="true" aria-describedby="message-error"
-      style="width:100%; min-height:120px; padding:0.75rem 1rem; border:1px solid #ccc; border-radius:4px; font-size:1rem; resize: vertical; margin-bottom:0.3rem; transition: border-color 0.3s;"></textarea>
-    <span id="message-error" style="color:#e74c3c; font-size:0.85rem; display:none;">Please enter your message</span>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-    <button type="submit" style="margin-top:1.5rem; width:100%; background:#007BFF; color:#fff; font-size:1.1rem; padding:0.75rem; border:none; border-radius:4px; cursor:pointer; transition: background-color 0.3s;">
-      Send Message
-    </button>
-  </form>
-</section>
-
-<!-- EmailJS SDK -->
-<script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
-  })();
-
-  const form = document.getElementById('contact-form');
-
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    // Clear previous errors
-    ['name', 'email', 'message'].forEach(id => {
-      document.getElementById(id + '-error').style.display = 'none';
-      document.getElementById(id).style.borderColor = '#ccc';
-    });
-
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const message = form.message.value.trim();
-
-    let valid = true;
-
-    if (!name) {
-      document.getElementById('name-error').style.display = 'block';
-      document.getElementById('name').style.borderColor = '#e74c3c';
-      valid = false;
-    }
-    if (!email || !/\S+@\S+\.\S+/.test(email)) {
-      document.getElementById('email-error').style.display = 'block';
-      document.getElementById('email').style.borderColor = '#e74c3c';
-      valid = false;
-    }
-    if (!message) {
-      document.getElementById('message-error').style.display = 'block';
-      document.getElementById('message').style.borderColor = '#e74c3c';
-      valid = false;
-    }
-
-    if (!valid) return;
-
-    const templateParams = {
-      from_name: name,
-      from_email: email,
-      message: message,
-      to_email: 'nsabitx3@gmail.com' // Optional if configured in EmailJS template
-    };
-
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
-      .then(() => {
-        alert('Message sent successfully! Thank you for reaching out.');
-        form.reset();
-      })
-      .catch((error) => {
-        alert('Oops! Something went wrong. Please try again later.');
-        console.error('EmailJS error:', error);
-      });
-  });
-</script>
   <!-- Footer -->
   <footer>
     &copy; 2025 Nsabimana Shadrach. All rights reserved.
