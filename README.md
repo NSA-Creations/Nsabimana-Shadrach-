@@ -6,7 +6,7 @@
     <h1>Nsabimana Shadrach | Web Designer & Developer</h1>
   </header>
   <title>Nsabimana Shadrach | Web Designer & Developer</title>
-  <link rel="icon" href="https://www.google.com/favicon.ico" />
+ <link rel="shortcut icon" type="image/png" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <style>
  /* Reset and base */
