@@ -6,7 +6,8 @@
     <h1>Nsabimana Shadrach | Web Designer & Developer</h1>
   </header>
   <title>Nsabimana Shadrach | Web Designer & Developer</title>
- <link rel="shortcut icon" type="image/png" href="favicon.png">
+ <link rel="shortcut icon" type="image/png" href="![favicon](https://github.com/user-attachments/assets/395265c8-f6f7-4dc3-ac26-569375b42630)
+">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <style>
  /* Reset and base */
